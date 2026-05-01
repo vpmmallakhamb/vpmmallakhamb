@@ -19,7 +19,7 @@ const GOOGLE_CALENDAR_ID = "YOUR_CALENDAR_ID_HERE@group.calendar.google.com";
 
 // 🔴 GITHUB PHOTOS RAW URL (Update with your username and repo name)
 // Ensure the branch name is correct (main or master) and the folder path is accurate.
-const GITHUB_HOF_PHOTOS_URL = "https://github.com/vpmmallakhamb/vpmmallakhamb.git";
+const GITHUB_HOF_PHOTOS_URL = "";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
