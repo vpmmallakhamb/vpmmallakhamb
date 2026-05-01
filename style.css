@@ -625,13 +625,14 @@ textarea:focus {
     backdrop-filter: blur(5px);
 }
 
-.modal-content {
-    background: var(--bg-surface);
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh;
-    border: 1px solid var(--brand-primary);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+.modal-content { 
+    background: var(--bg-surface); 
+    width: 90%; 
+    max-width: 600px; 
+    max-height: 90vh; 
+    overflow-y: auto; /* <-- This ensures the whole modal scrolls if needed */
+    border: 1px solid var(--brand-primary); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
 }
 
 .edit-player-btn {
@@ -1057,4 +1058,19 @@ textarea:focus {
     .timeline-node {
         padding: 20px;
     }
+}
+/* Custom Scrollbar for Modals and Lists */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--brand-primary);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-accent);
 }
