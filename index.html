@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPM's Vidyamandir Dahisar - Mallakhamb</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <div id="homeLogo" style="display: flex; align-items: center; gap: 15px; cursor: pointer;">
+                    <img src="logo.png" alt="VPM Logo" style="height: 45px; width: auto; object-fit: contain;">
+                    <h1 class="logo" style="margin: 0;">VPM <span>MALLAKHAMB</span></h1>
+                </div>
+                <a href="#" onclick="showSection('story-section'); return false;" style="color: #fff; text-decoration: none; font-weight: 600; font-family: 'Inter', sans-serif; font-size: 16px; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Our Story</a>
+            </div>
+            
+            <div id="user-controls">
+                <button id="loginBtn" class="auth-btn">Sign In</button>
+                <div id="userInfo" class="hidden">
+                    <span id="userName"></span>
+                    <button id="logoutBtn" class="auth-btn outline">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="guest-section" class="role-section active guest-section-wrapper">
+        <div class="guest-hero-container">
+            <div class="tagline" style="color: var(--gold); letter-spacing: 5px;">Tradition Meets Excellence</div>
+            <h2 class="guest-hero-title">VPM'S VIDYAMANDIR<br><span class="prestige-text" style="color: white;">Mallakhamb</span></h2>
+            <p class="guest-hero-subtitle">The premier destination for elite training, conditioning, and competitive excellence. Since 2016.</p>
+            <div class="cta-group">
+                <button class="btn-secondary-large" onclick="showSection('story-section')">Read Our Story</button>
+            </div>
+        </div>
+
+        <main style="max-width: 1300px; padding-top: 60px;">
+            <div class="content-header"><h2>Club News</h2></div>
+            <div id="guestBlogFeed" class="content-grid"><p class="loading-text">Loading news...</p></div>
+
+            <div class="content-header" style="margin-top: 60px;"><h2>Video Library</h2></div>
+            <div id="guestVideoFeed" class="content-grid"><p class="loading-text">Loading videos...</p></div>
+
+            <div id="hallOfFameWrapper">
+                <div class="content-header" style="margin-top: 60px;"><h2>Hall of Fame</h2></div>
+                <div id="guestHallOfFameFeed" class="content-grid"><p class="loading-text">Loading legends...</p></div>
+            </div>
+
+            <div class="content-header" style="margin-top: 60px;"><h2>Official Merchandise</h2></div>
+            <div class="premium-card" id="merchCard" style="text-align: center; padding: 60px 20px;">
+                <h3 style="color: var(--brand-primary); font-size: 28px; margin-bottom: 10px;">Store Launching Soon</h3>
+                <p style="color: var(--text-muted); font-size: 16px;">We are working on bringing you premium official gear. Stay tuned!</p>
+            </div>
+        </main>
+    </section>
+
+    <section id="achievements-section" class="role-section">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="tagline">Honor & Glory</div>
+                <h2 class="hero-title">Global <span class="prestige-text">Achievements</span></h2>
+                <p class="hero-subtitle">The complete record of our athletes' triumphs across all platforms.</p>
+            </div>
+        </div>
+        <main style="max-width: 1300px;">
+            <div id="globalAchievementsFeed" class="content-grid"><p class="loading-text">Loading records...</p></div>
+        </main>
+    </section>
+
+    <section id="story-section" class="role-section">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="tagline">More Than A Team</div>
+                <h2 class="hero-title">OUR <span class="prestige-text">Story</span></h2>
+            </div>
+        </div>
+
+        <div class="statement-block">
+            <h3 class="statement-text">Just as cricket is played in every alley, Mallakhamb too must reach every corner.</h3>
+        </div>
+
+        <main>
+            <div class="story-text-container">
+                <p class="story-paragraph first-letter">
+                    This thought was the spark that ignited a beautiful journey. In 2016, our coach and alumni, Shri Mukesh Velonde, started a summer camp at Vidyamandir school with a simple vision: to keep the heritage of Mallakhamb alive in the very place that introduced him to it. Supported by the late Bhau Thakur, Dr. Vasundhara Natekar, and Vidya Satam, the VPM Mallakhamb movement officially began.
+                </p>
+                <p class="story-paragraph">
+                    Over the last decade, through rigorous practice, competitive excellence, and the integration of modern tech like onemallakhamb.in for scoring, we have built a distinct culture. We celebrate traditions, festivals, and triumphs together. Today, VPM's Vidyamandir Dahisar is not just a club with elite State and National athletes—it is a family.
+                </p>
+            </div>
+
+            <div class="content-header" style="margin-top: 20px;">
+                <h2>Our Journey</h2>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-node">
+                    <h4 class="timeline-year">2016</h4>
+                    <p class="timeline-content">The foundation is laid with the first Mallakhamb summer camp classes at Vidyamandir School, Dahisar.</p>
+                </div>
+                <div class="timeline-node">
+                    <h4 class="timeline-year">2017 & 2018</h4>
+                    <p class="timeline-content">Our athletes begin capturing district medals. Mrugank Pathare, Manthan Mirlekar, and Tarun Mallya become the first VPM boys selected for the State Championship in Alibaug.</p>
+                </div>
+                <div class="timeline-node">
+                    <h4 class="timeline-year">2019</h4>
+                    <p class="timeline-content">Hardika Shinde and Palak Churi make history as our first girls selected for States in Pune. VPM also successfully hosts the inaugural Balambhatdada Deodhar Trophy.</p>
+                </div>
+                <div class="timeline-node">
+                    <h4 class="timeline-year">2020 & 2021</h4>
+                    <p class="timeline-content">Despite the global lockdown halting ground practice, online fitness classes keep the fire burning. The hard work pays off in 2021 when Mrugank, Hardika, and Palak are selected for the Nationals in Ujjain, representing Maharashtra.</p>
+                </div>
+                <div class="timeline-node">
+                    <h4 class="timeline-year">2022 & 2023</h4>
+                    <p class="timeline-content">VPM athletes compete in the first-ever Khelo India Youth Games to feature Mallakhamb. Back home, the club installs an indoor frame for advanced rope practice and proudly hosts the DSO Zonal Selections.</p>
+                </div>
+                <div class="timeline-node">
+                    <h4 class="timeline-year">2026</h4>
+                    <p class="timeline-content">Mrugank created onemallakhamb.in, a web application for scoring and online points display at mallakhamb competitions.</p>
+                </div>
+                <div class="timeline-node" style="border-color: var(--brand-primary); box-shadow: 0 0 15px rgba(148,0,211,0.2);">
+                    <h4 class="timeline-year" style="color: var(--text-main);">The Journey Continues...</h4>
+                    <p class="timeline-content">And the journey is going on with many medallists at IOA's National Games, Khelo India Youth Games, Khelo India University Games, Federation Nationals, School Games Nationals, All India University Games, Khelo India Beach Games, etc.</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <div id="portal-wrapper">
+        <section id="player-section" class="role-section">
+            <main>
+                <div class="section-header"><h2>Athlete Dashboard</h2><p>Manage your profile, schedules, and billing.</p></div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Athletic Profile</h3>
+                        <div id="playerProfileData" class="profile-info"></div>
+                        <button id="toggleEditProfileBtn" class="action-link">Update Personal Details & Photo →</button>
+                        
+                        <form id="editPlayerProfileForm" class="grid-form hidden edit-form">
+                            <div class="form-group full-width"><label>Profile Photograph</label><input type="file" id="editPhoto" accept="image/*"></div>
+                            <div class="form-group"><label>Mobile Number</label><input type="tel" id="editMobile" required></div>
+                            <div class="form-group"><label>Address</label><input type="text" id="editAddress" required></div>
+                            <div class="form-group"><label>School/College</label><input type="text" id="editSchool" required></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn" id="editProfileSubmitBtn">Update Profile</button></div>
+                        </form>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Billing Status</h3>
+                        <ul id="playerFeesList" class="data-list"><li>Loading payment records...</li></ul>
+                        <button id="payFeesBtn" class="submit-btn success-btn">Clear Dues Online</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>My Official Achievements</h3>
+                    <ul id="playerAchievementsList" class="data-list"><li>Loading records...</li></ul>
+                </div>
+
+                <div class="dashboard-grid" style="margin-top: 30px;">
+                    <div class="dashboard-card">
+                        <h3>Attendance Analytics</h3>
+                        <div class="filter-box grid-form" style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color);">
+                            <div class="form-group"><label>Start Date</label><input type="date" id="attFilterStart"></div>
+                            <div class="form-group"><label>End Date</label><input type="date" id="attFilterEnd"></div>
+                            <div class="form-group full-width"><button id="applyAttFilterBtn" class="submit-btn secondary-btn" style="margin-top: 0;">Calculate Rate</button></div>
+                        </div>
+                        <div class="analytics-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                            <div class="stat-box"><h5>Scheduled</h5><span id="statScheduled">--</span></div>
+                            <div class="stat-box"><h5>Attended</h5><span id="statAttended" style="color: var(--success);">--</span></div>
+                            <div class="stat-box" style="background: var(--brand-primary);"><h5 style="color: white;">Rate</h5><span id="statRate" style="color: white;">--%</span></div>
+                        </div>
+                        <h4>Session Breakdown</h4>
+                        <ul id="playerAttendanceList" class="data-list" style="max-height: 250px; overflow-y: auto;"><li>Loading attendance...</li></ul>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Upcoming Practice Sessions</h3>
+                        <p class="subtext">Your official schedule. Click an event for exact timings.</p>
+                        <div id="playerCalendar" style="background: var(--bg-base); padding: 15px; border-radius: 4px; border: 1px solid var(--border-color);"></div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <section id="coach-section" class="role-section">
+            <main>
+                <div class="section-header"><h2>Coaching Staff Portal</h2></div>
+                
+                <div class="dashboard-card hidden" id="coachFeesCard" style="margin-bottom: 30px;">
+                    <h3>Financial Operations</h3>
+                    <form id="coachMarkFeeForm" class="grid-form">
+                        <div class="form-group full-width"><label>Athlete</label><select id="coachFeePlayer" class="player-select-dropdown" required><option value="">Loading...</option></select></div>
+                        <div class="form-group"><label>Billing Month</label><select id="coachFeeMonth" required><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div>
+                        <div class="form-group"><label>Year</label><input type="number" id="coachFeeYear" value="2026" required></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn success-btn">Log Payment</button></div>
+                    </form>
+                    <div class="divider"></div>
+                    <h4>Recent Ledgers</h4>
+                    <ul id="coachRecentFeesList" class="data-list"></ul>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Active Roster</h3>
+                        <p class="subtext">Click 'Edit' to update official details.</p>
+                        <ul id="coachPlayerList" class="data-list roster-list"></ul>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Session Attendance</h3>
+                        <p class="subtext">Mark present athletes for a scheduled date.</p>
+                        <form id="attendanceForm" class="grid-form">
+                            <div class="form-group"><label>Session Date</label><input type="date" id="attendanceDate" required></div>
+                            <div class="form-group"><label>Group Focus</label><select id="attendanceGroup" required><option value="">Select...</option><option value="Regular">Regular</option><option value="Advanced">Advanced</option><option value="Elite">Elite</option></select></div>
+                            <div class="form-group full-width"><button type="button" id="loadAttendanceListBtn" class="submit-btn secondary-btn">Fetch Roster</button></div>
+                            <div id="attendanceTogglesContainer" class="form-group full-width hidden">
+                                <div class="divider"></div><h4>Mark Present</h4><ul id="attendanceTogglesList" class="data-list check-list"></ul><button type="submit" class="submit-btn">Commit Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Register New Athlete</h3>
+                        <form id="coachAddPlayerForm" class="grid-form">
+                            <div class="form-group full-width"><label>Auth Email (Optional)</label><input type="email" id="coachPlayerEmail"></div>
+                            <div class="form-group full-width"><label>Photograph (Required)</label><input type="file" id="coachPlayerPhoto" accept="image/*" required></div>
+                            <div class="form-group"><label>First Name</label><input type="text" id="coachPlayerFirstName" required></div><div class="form-group"><label>Last Name (Surname)</label><input type="text" id="coachPlayerLastName" required></div><div class="form-group"><label>Father's Name</label><input type="text" id="coachFatherName" required></div><div class="form-group"><label>Mother's Name</label><input type="text" id="coachMotherName" required></div>
+                            <div class="form-group"><label>D.O.B</label><input type="date" id="coachPlayerDOB" required></div><div class="form-group"><label>Sex</label><select id="coachPlayerGender" required><option value="Male">Male</option><option value="Female">Female</option></select></div>
+                            <div class="form-group"><label>Contact Mobile</label><input type="tel" id="coachPlayerMobile" required></div><div class="form-group full-width"><label>Address</label><input type="text" id="coachPlayerAddress" required></div>
+                            <div class="form-group"><label>Academic Inst.</label><input type="text" id="coachPlayerSchool" required></div><div class="form-group"><label>Career Status</label><select id="coachPlayerStatus" required><option value="Playing">Playing</option><option value="Transferred">Transferred</option><option value="Retired">Retired</option></select></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn" id="coachAddPlayerSubmitBtn">Execute Registration</button></div>
+                        </form>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Session Scheduler</h3>
+                        <p class="subtext">Add a session here. Click an event on the calendar below to delete it.</p>
+                        <form id="coachSchedulePracticeForm" class="grid-form">
+                            <div class="form-group full-width"><label>Date</label><input type="date" id="coachPracticeDate" required></div>
+                            <div class="form-group"><label>Start Time</label><input type="time" id="coachPracticeStartTime" required></div><div class="form-group"><label>End Time</label><input type="time" id="coachPracticeEndTime" required></div>
+                            <div class="form-group"><label>Condition</label><select id="coachPracticeGender" required><option value="All">Mixed</option><option value="Male">Men</option><option value="Female">Women</option></select></div><div class="form-group"><label>Tier</label><select id="coachPracticeGroup" required><option value="All">All Groups</option><option value="Regular">Regular</option><option value="Advanced">Advanced</option><option value="Elite">Elite</option></select></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn">Broadcast Schedule</button></div>
+                        </form>
+                        
+                        <div id="coachCalendar" style="margin-top: 30px; background: var(--bg-base); padding: 15px; border-radius: 4px; border: 1px solid var(--border-color);"></div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <section id="admin-section" class="role-section">
+            <main>
+                <div class="section-header"><h2>System Administration</h2><p>Total platform control and management.</p></div>
+
+                <div class="dashboard-card" style="margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
+                        <div>
+                            <h3>Club Analytics & Reports</h3>
+                            <p class="subtext">Generate system reports and bi-directionally sync with Google Sheets.</p>
+                        </div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button id="syncSheetsBtn" class="submit-btn success-btn" style="width: auto; margin: 0; padding: 10px 20px;">1. Push to Sheets</button>
+                            <button id="pullFromSheetsBtn" class="submit-btn" style="width: auto; margin: 0; padding: 10px 20px; background-color: #f39c12; color: #000;">2. Pull from Sheets</button>
+                        </div>
+                    </div>
+                    
+                    <button id="generateReportBtn" class="submit-btn secondary-btn" style="width: auto; padding: 10px 20px; margin-top: 15px;">Generate Live Report</button>
+                    
+                    <div id="adminReportContainer" class="hidden" style="margin-top: 20px;">
+                        <div class="grid-form">
+                            <div class="form-group" style="background: var(--bg-base); padding: 15px; border-radius: 4px; border: 1px solid var(--brand-primary);"><h4 style="color: var(--brand-primary); margin-bottom: 5px;">Total Active Athletes</h4><p id="reportTotalPlayers" style="font-size: 24px; font-weight: 900; margin: 0;">--</p></div>
+                            <div class="form-group" style="background: var(--bg-base); padding: 15px; border-radius: 4px; border: 1px solid var(--success);"><h4 style="color: var(--success); margin-bottom: 5px;">Fees Collected (This Month)</h4><p id="reportFeesCollected" style="font-size: 24px; font-weight: 900; margin: 0;">--</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card" style="margin-bottom: 30px;">
+                    <h3>Active Club Roster</h3>
+                    <p class="subtext">Click 'Edit' to update a player's official details.</p>
+                    <ul id="adminPlayerList" class="data-list roster-list" style="max-height: 400px; overflow-y: auto;"></ul>
+                </div>
+
+                <div class="dashboard-card" style="margin-bottom: 30px; border-color: var(--gold);">
+                    <h3 style="color: var(--gold);">Manage Hall of Fame</h3>
+                    <p class="subtext">Induct athletes into the prestigious Hall of Fame.</p>
+                    <form id="adminHallOfFameForm" class="grid-form">
+                        <div class="form-group full-width"><label>Select Athlete</label><select id="adminHofPlayer" class="player-select-dropdown" required><option value="">Loading...</option></select></div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn" style="background-color: var(--gold); color: #000;">Induct into Hall of Fame</button></div>
+                    </form>
+                    <div class="divider"></div>
+                    <h4>Current Members</h4>
+                    <ul id="adminHofList" class="data-list roster-list"></ul>
+                </div>
+
+                <div class="dashboard-card" style="margin-bottom: 30px;">
+                    <h3>Log Tournament Achievements</h3>
+                    <p class="subtext">Select an athlete and an event, then attach multiple medals.</p>
+                    <form id="adminAchievementForm" class="grid-form">
+                        <div class="form-group full-width"><label>Select Athlete</label><select id="adminAchievementPlayer" class="player-select-dropdown" required><option value="">Loading...</option></select></div>
+                        <div class="form-group full-width"><label>Tournament Name / Event</label><input type="text" id="achievementTitle" required placeholder="e.g. 5th District Championship"></div>
+                        <div class="form-group"><label>Event Date</label><input type="date" id="achievementDate" required></div>
+                        <div class="form-group full-width"><label>Event Description</label><textarea id="achievementDesc" rows="2" placeholder="Brief summary of the event..."></textarea></div>
+                        
+                        <div class="form-group full-width" style="background: var(--bg-base); padding: 15px; border: 1px solid #333; border-radius: 4px;">
+                            <h4 style="margin-bottom: 10px;">Medals Won at this Event</h4>
+                            <div id="medalRowsContainer">
+                                <div class="medal-row grid-form" style="margin-bottom: 10px;">
+                                    <div class="form-group"><select class="medal-event-type" required><option value="">Event Type...</option><option value="All Round Championship">All Round Championship</option><option value="Apparatus Championship">Apparatus Championship</option><option value="Team Championship">Team Championship</option></select></div>
+                                    <div class="form-group apparatus-group hidden"><select class="medal-apparatus"><option value="">Apparatus...</option><option value="Pole">Pole</option><option value="Rope">Rope</option><option value="Hanging (Niradhar)">Hanging (Niradhar)</option></select></div>
+                                    <div class="form-group"><select class="medal-level" required><option value="">Level...</option><option value="District">District</option><option value="State">State</option><option value="National">National</option><option value="International">International</option><option value="Invitational">Invitational</option></select></div>
+                                    <div class="form-group"><select class="medal-type" required><option value="">Medal Type...</option><option value="Gold">Gold</option><option value="Silver">Silver</option><option value="Bronze">Bronze</option><option value="Participant">Participant</option></select></div>
+                                </div>
+                            </div>
+                            <button type="button" id="addMedalRowBtn" class="action-link" style="color: var(--gold);">+ Add Another Medal</button>
+                        </div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn" style="background-color: #ffd700; color: #000;">Commit Achievements</button></div>
+                    </form>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Access Control</h3>
+                        <form id="assignRoleForm" class="grid-form align-bottom">
+                            <div class="form-group full-width"><label>Google Account</label><input type="email" id="roleEmail" required></div>
+                            <div class="form-group"><label>Identity</label><input type="text" id="roleName" required></div>
+                            <div class="form-group"><label>Clearance Level</label><select id="roleSelect" required><option value="guest">Guest</option><option value="player">Athlete</option><option value="coach">Staff (Coach)</option><option value="fees_manager">Staff (Financial)</option><option value="admin">System Admin</option></select></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn">Grant Access</button></div>
+                        </form>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Financial Override</h3>
+                        <form id="adminMarkFeeForm" class="grid-form">
+                            <div class="form-group full-width"><label>Athlete</label><select id="adminFeePlayer" class="player-select-dropdown" required><option value="">Loading...</option></select></div>
+                            <div class="form-group"><label>Month</label><select id="adminFeeMonth" required><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div>
+                            <div class="form-group"><label>Year</label><input type="number" id="adminFeeYear" value="2026" required></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn success-btn">Force Ledger Entry</button></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Athlete Registration (Full Entry)</h3>
+                        <form id="addPlayerForm" class="grid-form">
+                            <div class="form-group full-width"><label>Auth Email (Optional)</label><input type="email" id="playerEmail"></div>
+                            <div class="form-group full-width"><label>Photograph (Required)</label><input type="file" id="playerPhoto" accept="image/*" required></div>
+                            <div class="form-group"><label>First Name</label><input type="text" id="playerFirstName" required></div>
+                            <div class="form-group"><label>Last Name (Surname)</label><input type="text" id="playerLastName" required></div>
+                            <div class="form-group"><label>Father's Name</label><input type="text" id="fatherName" required></div>
+                            <div class="form-group"><label>Mother's Name</label><input type="text" id="motherName" required></div>
+
+                            <div class="form-group"><label>D.O.B</label><input type="date" id="playerDOB" required></div>
+                            <div class="form-group"><label>Sex</label><select id="playerGender" required><option value="Male">Male</option><option value="Female">Female</option></select></div>
+                            <div class="form-group"><label>Contact Mobile</label><input type="tel" id="playerMobile" required></div>
+                            <div class="form-group full-width"><label>Address</label><input type="text" id="playerAddress" required></div>
+                            <div class="form-group"><label>Academic Inst.</label><input type="text" id="playerSchool" required></div>
+                            <div class="form-group"><label>Career Status</label><select id="playerStatus" required><option value="Playing">Playing</option><option value="Transferred">Transferred</option><option value="Retired">Retired</option></select></div>
+                            
+                            <div class="form-group full-width"><div class="divider"></div><h4>Governing Body Data</h4></div>
+                            <div class="form-group"><label>Upanagar ID</label><input type="text" id="upnagarId"></div>
+                            <div class="form-group"><label>Induction Date</label><input type="date" id="dateJoined" required></div>
+                            <div class="form-group"><label>Competency</label><select id="playerLevel" required><option value="District">District</option><option value="State">State</option><option value="National">National</option></select></div>
+                            <div class="form-group"><label>Assignment</label><select id="playerGroup" required><option value="Regular">Regular</option><option value="Advanced">Advanced</option><option value="Elite">Elite</option></select></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn" id="adminAddPlayerSubmitBtn">Execute Registration</button></div>
+                        </form>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Session Scheduler</h3>
+                        <p class="subtext">Add a session here. Click an event on the calendar below to delete it.</p>
+                        <form id="adminSchedulePracticeForm" class="grid-form">
+                            <div class="form-group full-width"><label>Date</label><input type="date" id="adminPracticeDate" required></div>
+                            <div class="form-group"><label>Start Time</label><input type="time" id="adminPracticeStartTime" required></div><div class="form-group"><label>End Time</label><input type="time" id="adminPracticeEndTime" required></div>
+                            <div class="form-group"><label>Condition</label><select id="adminPracticeGender" required><option value="All">Mixed</option><option value="Male">Men</option><option value="Female">Women</option></select></div><div class="form-group"><label>Tier</label><select id="adminPracticeGroup" required><option value="All">All Groups</option><option value="Regular">Regular</option><option value="Advanced">Advanced</option><option value="Elite">Elite</option></select></div>
+                            <div class="form-group full-width"><button type="submit" class="submit-btn">Broadcast Schedule</button></div>
+                        </form>
+                        
+                        <div id="adminCalendar" style="margin-top: 30px; background: var(--bg-base); padding: 15px; border-radius: 4px; border: 1px solid var(--border-color);"></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Media Publishing (CMS)</h3>
+                    <form id="addBlogForm" class="grid-form">
+                        <div class="form-group full-width"><label>Headline</label><input type="text" id="blogTitle" required></div>
+                        <div class="form-group"><label>Category</label><select id="blogCategory" required><option value="Club News">Club News</option><option value="Match Report">Match Report</option><option value="Training Update">Training Update</option><option value="Announcement">Announcement</option></select></div>
+                        <div class="form-group"><label>Tags (Comma separated)</label><input type="text" id="blogTags" placeholder="e.g. Regionals, Elite"></div>
+                        <div class="form-group full-width"><label>Cover Image (Upload File)</label><input type="file" id="blogCoverImage" accept="image/*" required></div>
+                        <div class="form-group full-width">
+                            <label>Article Body</label>
+                            <div id="quill-toolbar" class="editor-tools"><span class="ql-formats"><select class="ql-header"><option value="2">H2</option><option value="3">H3</option><option selected>P</option></select></span><span class="ql-formats"><button class="ql-bold"></button><button class="ql-italic"></button></span><span class="ql-formats"><button class="ql-list" value="ordered"></button><button class="ql-list" value="bullet"></button><button class="ql-link"></button></span></div>
+                            <div id="blogEditor" class="editor-area"></div>
+                        </div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn" id="blogSubmitBtn">Publish to CMS</button></div>
+                    </form>
+                    <div class="divider"></div>
+                    <form id="addVideoForm" class="grid-form">
+                        <div class="form-group full-width">
+                            <label>YouTube Integration URL</label>
+                            <input type="text" id="videoUrl" required placeholder="https://youtube.com/watch?v=... or https://youtu.be/...">
+                        </div>
+                        <div class="form-group full-width"><button type="submit" class="submit-btn danger-btn">Mount Video</button></div>
+                    </form>
+                </div>
+            </main>
+        </section>
+    </div>
+
+    <div id="masterEditModal" class="modal-overlay hidden">
+        <div class="modal-content dashboard-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; padding-bottom: 10px;">
+                <h3 style="margin: 0;">Update Athlete File</h3>
+                <button id="closeModalBtn" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">✕</button>
+            </div>
+            
+            <form id="masterEditPlayerForm" class="grid-form" style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+                <div class="form-group full-width"><p class="subtext" style="margin:0;">VPM ID: <strong id="modalVpmIdLabel" style="color:var(--brand-primary);"></strong></p></div>
+                
+                <div class="form-group"><label>First Name</label><input type="text" id="modalFirstName" required></div>
+                <div class="form-group"><label>Last Name</label><input type="text" id="modalLastName" required></div>
+                <div class="form-group"><label>Father's Name</label><input type="text" id="modalFatherName" required></div>
+                <div class="form-group"><label>Mother's Name</label><input type="text" id="modalMotherName" required></div>
+                
+                <div class="form-group"><label>Contact Mobile</label><input type="tel" id="modalMobile" required></div>
+                <div class="form-group"><label>Address</label><input type="text" id="modalAddress" required></div>
+                <div class="form-group"><label>School/College</label><input type="text" id="modalSchool" required></div>
+                <div class="form-group"><label>Career Status</label><select id="modalStatus" required><option value="Playing">Playing</option><option value="Transferred">Transferred</option><option value="Retired">Retired</option></select></div>
+                
+                <div class="form-group"><label>Upanagar ID</label><input type="text" id="modalUpanagarId"></div>
+                <div class="form-group"><label>Competency Level</label><select id="modalLevel" required><option value="District">District</option><option value="State">State</option><option value="National">National</option></select></div>
+                <div class="form-group full-width"><label>Group Assignment</label><select id="modalGroup" required><option value="Regular">Regular</option><option value="Advanced">Advanced</option><option value="Elite">Elite</option></select></div>
+                
+                <div class="form-group full-width"><button type="submit" class="submit-btn" id="modalSubmitBtn">Commit Changes</button></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="playerApprovalModal" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width: 800px;">
+            <span class="close-btn">&times;</span>
+            <h2 style="margin-bottom: 20px;">Pending Team Change Requests</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">The following athletes have requested to join this team. Approving will transfer their official affiliation.</p>
+            <ul id="approvalRequestsList" class="data-list roster-list"></ul>
+        </div>
+    </div>
+
+    <!-- Hall of Fame Modal -->
+    <div id="hofModal" class="modal-overlay hidden">
+        <div class="modal-content premium-card" style="max-width: 800px; padding: 40px; text-align: left;">
+            <span class="close-btn" style="color: white; font-size: 28px;">&times;</span>
+            <div style="display: flex; gap: 30px; align-items: center; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; flex-wrap: wrap;">
+                <img id="hofModalImage" src="" alt="Athlete" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold);">
+                <div>
+                    <h2 id="hofModalName" style="color: var(--gold); font-size: 32px; margin-bottom: 5px;">Player Name</h2>
+                    <p style="color: var(--text-muted); font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px;">Hall of Fame Inductee</p>
+                </div>
+            </div>
+            <h3 style="margin-bottom: 20px;">Lifetime Achievements</h3>
+            <div id="hofModalAchievements" class="content-grid" style="grid-template-columns: 1fr;">
+                <p class="loading-text">Loading achievements...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
